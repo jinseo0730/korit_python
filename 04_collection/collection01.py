@@ -63,3 +63,45 @@ print("apple" in fruits)
 result = "-".join(list1)
 print(result)
 
+#실습
+cart = []
+#3개의 상품명을 입력받아서 cart에 추가
+#최종적으로 cart를 출력
+# product1 = input("상품 입력 : ")
+# cart.append(product1)
+# product2 = input("상품 입력 : ")
+# cart.append(product2)
+# product3 = input("상품 입력 : ")
+# cart.append(product3)
+# print(cart)
+
+# cart.append(input("추가할 상품 :"))
+
+
+
+#튜플
+colors = ("red", "blue", "green")
+numbers = (1, 2, 3, 4, 5)
+mixed = ("pink", 1, True)
+single_tuple = ("hello",) #요소가 1개일 때는 꼭 ,를 붙여야 함
+alphabet = ("a", "a", "a", "b", "c", "c")
+
+#요소 접근
+print(colors[1])
+
+#요소 변경 불가
+# colors[1] = "yellow"
+
+#튜플 슬라이싱
+print(colors[:2])
+print(colors[::-1])
+
+#count
+print(alphabet.count("a"))
+
+#index
+print(alphabet.index("b"))
+
+#튜플 언패킹
+a, b, c = colors
+print(a, b, c)
