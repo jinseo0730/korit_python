@@ -27,7 +27,7 @@ print(x != z) #False
 print(x <= y) #True
 print(x >= z) #True
 
-#ㄴㄴ리연산자
+#논리연산자
 a = True
 b = False
 print(not a and b)
