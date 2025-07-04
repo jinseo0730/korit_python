@@ -27,9 +27,24 @@ print(x != z) #False
 print(x <= y) #True
 print(x >= z) #True
 
-#ㄴㄴ리연산자
+#논리연산자
 a = True
 b = False
 print(not a and b)
 print(a or b)
 print(not b)
+
+#조건연산자(삼항연산자)
+a = 10
+b = 20
+
+max_value = a if a > b else b
+print(max_value)
+
+#홀수 판별
+num = 144
+result = "짝수" if num % 2 == 0 else "홀수"
+print(result)
+
+# 참일때 반환값 if 조건 else 거짓일때 반환값
+
