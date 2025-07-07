@@ -58,4 +58,20 @@ while 조건:
 
 
 #5의 배수 출력 50까지 (30에서 멈추기)  => 숙제
+#5의 배수 출력 50까지 (30에서 멈추기)
+#방법1
+num = 1
+while num <= 50:
+    if num % 5 == 0:
+        print(num)
+    if num == 30:
+        break
+    num += 1
 
+#방법2
+num = 5
+while num <= 50:
+    print(num)
+    if num == 30:
+        break
+    num += 5

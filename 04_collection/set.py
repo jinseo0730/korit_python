@@ -43,5 +43,3 @@ java_class = {"영희", "민수", "지훈", "길동"}
 print("파이썬과 자바 수업을 둘 다 듣는 사람 :", python_class & java_class)
 print("파이썬만 듣는 사람 :", python_class.difference(java_class))
 print("자바만 듣는 사람 :", java_class.difference(python_class))
-
-
