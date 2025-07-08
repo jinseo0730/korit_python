@@ -142,13 +142,15 @@ print(sum(num_list))
 #실습 문제
 data = ["apple", "banana", "cherry", "grape", "mango", "blueberry", "lemon"]
 
-#1. apple
-#2. banana
+# 1. apple
+# 2. banana
 for i, item in enumerate(data):
     print(f"{i+1}. {item}")
 
 #인덱스가 짝수인 요소만 출력 (인덱스: 요소)
 for i, value in enumerate(data):
     if i % 2 == 0:
-        print(f"{i} : {value}")
+        print(f"인덱스: {i}, 값: {value}")
+
+
 
