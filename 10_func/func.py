@@ -146,6 +146,9 @@ print(calculator2(4, 2, divide2))
 # result = ["홀수", "짝수", "짝수", ...]
 
 num_list = [11, 16, 88, 75, 46, 97, 3, 14]
-result = map(lambda x: "짝수" if x % 2 == 0 else "홀수", num_list)
-list_result = list(result)
-print(list_result)
+
+def parity(number_list):
+     result = list(map(lambda x: "짝수" if x % 2 == 0 else "홀수", num_list))
+     return result
+
+print(parity(num_list))
