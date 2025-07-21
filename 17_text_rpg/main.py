@@ -1,6 +1,8 @@
 import os
 from package.models import Player
 from package.utils import save_game, load_game
+from package.constants import monsters
+from package.game import battle
 
 def main():
     print("턴제 RPG 게임")
@@ -31,6 +33,15 @@ def main():
 
         if choice == "1":
             print("\n[배틀]")
+            #싸울 몬스터 선택
+            for idx, monster in enumerate(monsters):
+                print(f"{idx + 1}. {monster.name} (HP: {monster.hp}, 공격력: {monster.attack})")
+            m_choice = int(input("몬스터를 선택하세요:")) -1
+            if 0 <= m_choice < len(monsters):
+                #몬스터 배틀 시작
+                battle(player, monsters[m_choice])
+            else:
+                print("잘못된 입력입니다.")
         elif choice == "2":
             print("\n[상점]")
         elif choice == "3":

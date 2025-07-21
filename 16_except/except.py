@@ -138,10 +138,17 @@ my_dictionary = {
 }
 
 try:
-    key = int(input("키를 입력하세요"))
-    value = my_dictionary[key]
+    key_input = input("키(숫자)를 입력하세요 : ")
+    key = int(key_input)  #ValueError가 발생할 수 있는 코드
+    result = my_dictionary[key] #KeyError가 발생할 수 있는 코드
+except ValueError:
+    print("숫자를 입력해주세요.")
 except KeyError:
     print("해당 키는 존재하지 않습니다.")
+else:
+    print(result)
+finally:
+    print("완료!!")
 
 
 
