@@ -62,6 +62,14 @@ def battle(player, monster):
         if monster.hp <= 0:
             print(f"{monster.name}을/를 처치했습니다.")
             #배틀 보상
+            exp_reward_multiple = random.uniform(0.9, 1.1)
+            gold_reward_multiple = random.uniform(0.9, 1.1)
+            exp_reward = int(monster.exp_reward * exp_reward_multiple)
+            gold_reward = int(monster.gold_reward * gold_reward_multiple)
+            print(f"\n경험치 - {exp_reward}, 골드 - {gold_reward} 획득!\n")
+            player.gain_exp(exp_reward)
+            player.gold += gold_reward
+
 
             #몬스터의 데이터와 플레이어의 데이터를 초기화
             monster.hp = monster.max_hp
@@ -79,6 +87,8 @@ def battle(player, monster):
         if player.hp <= 0:
             print("패배했습니다. 게임 오버!")
             #플레이어가 소지하고 있던 아이템을 초기화
+            player.hp = player.max_hp
+            player.mp = player.max_mp
             break
 
         #마나 회복 시스템
