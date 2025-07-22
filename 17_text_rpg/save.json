@@ -1,15 +1,15 @@
 {
-    "nickname": "모험가",
-    "level": 2,
-    "gold": 18,
-    "attack": 15,
-    "exp": 12,
-    "max_exp": 150,
-    "hp": 110,
-    "max_hp": 110,
-    "mp": 60,
-    "max_mp": 60,
-    "cri_luck": 0,
+    "nickname": "모험가2",
+    "level": 1,
+    "gold": 2906,
+    "attack": 20,
+    "exp": 28,
+    "max_exp": 100,
+    "hp": 10,
+    "max_hp": 10,
+    "mp": 50,
+    "max_mp": 50,
+    "cri_luck": 10,
     "skills": [
         {
             "name": "달팽이 세마리",
@@ -27,5 +27,30 @@
             "damage_multiple": 1.8
         }
     ],
-    "items": []
+    "items": [
+        {
+            "name": "도란의 검",
+            "attack": 5,
+            "hp": 0,
+            "mp": 0,
+            "cri_luck": 0,
+            "price": 50
+        },
+        {
+            "name": "민첩성의 망토",
+            "attack": 0,
+            "hp": 0,
+            "mp": 0,
+            "cri_luck": 10,
+            "price": 60
+        },
+        {
+            "name": "도란의 검",
+            "attack": 5,
+            "hp": 0,
+            "mp": 0,
+            "cri_luck": 0,
+            "price": 50
+        }
+    ]
 }

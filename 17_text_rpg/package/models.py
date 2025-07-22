@@ -54,6 +54,31 @@ class Player:
         self.max_exp = int(self.max_exp * 1.5)
         print(f"레벨 업! {self.level}레벨이 되었습니다.\n공격력 +5\n 최대 HP +10\n최대 MP +10")
 
+    def apply_item(self, item):
+        self.attack += item["attack"]
+        self.max_hp += item["hp"]
+        self.max_mp += item["mp"]
+        self.cri_luck += item["cri_luck"]
+        print(f"<{item["name"]}>"
+              f"\n공격력 + {item["attack"]} => {self.attack}"
+              f"\n최대 HP + {item["hp"]} => {self.max_hp}"
+              f"\n최대 MP + {item["mp"]} => {self.max_mp}"
+              f"\n치명타 확률 + {item["cri_luck"]}% => {self.cri_luck}%")
+
+    def mp_recovery(self, mp):
+        self.mp = min(self.max_mp, self.mp + mp)
+        print(f"현재 MP: {self.mp}")
+
+
+    def player_died(self):
+        for item in self.items:
+            self.attack -= item["attack"]
+            self.max_hp -= item["hp"]
+            self.max_mp -= item["mp"]
+            self.cri_luck -= item["cri_luck"]
+        self.items = []
+
+
 
 class Monster:
     def __init__(self, name, max_hp, attack, exp_reward, gold_reward):

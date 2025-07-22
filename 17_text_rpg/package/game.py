@@ -1,5 +1,6 @@
 import time
 import random
+from .constants import shop_item
 
 def basic_atk(player):
     if random.randint(1, 100) <= player.cri_luck:
@@ -87,12 +88,45 @@ def battle(player, monster):
         if player.hp <= 0:
             print("패배했습니다. 게임 오버!")
             #플레이어가 소지하고 있던 아이템을 초기화
+            player.player_died()
             player.hp = player.max_hp
             player.mp = player.max_mp
             break
 
         #마나 회복 시스템
+        player.mp_recovery(5)
 
+#상점함수
+def shop(player):
+    print(f"\n보유골드: {player.gold}")
+    #저 리스트 가져와서 1. 아이템명 (추가 공격력: 얼마, 추가 HP: 얼마, 추가 치명타 확률: 얼마, 가격: 얼마)
+    for idx, item in enumerate(shop_item):
+        print(f"\n{idx+1}. {item["name"]} (추가 공격력: {item["attack"]}, 추가 HP: {item["hp"]}, 추가 치명타 확률: {item["cri_luck"]}, 가격: {item["price"]})")
+    while True:
+        try:
+            choice = int(input("구매할 아이템 번호를 입력해 주세요(취소: 0): ")) - 1
+        except ValueError:
+            print("잘못된 입력입니다.")
+            continue
+        if 0 <= choice < len(shop_item):
+            item = shop_item[choice]
+            if player.gold >= item["price"]:
+                player.gold -= item["price"]
+                player.items.append(item)  # 단숞 플레이어의 아이템 리스트에 추가
+                # 아이템 수치 적용
+                print(f"{item["name"]}을/를 구매했습니다!")
+                print(f"남은 골드 : {player.gold}")
+                player.apply_item(item)
+                break
+            else:
+                print("골드가 부족합니다.")
+                continue
+        elif choice == -1:
+            print("구매를 취소했습니다.")
+            break
+        else:
+            print("잘못된 입력입니다.")
+            continue
 
 
 
